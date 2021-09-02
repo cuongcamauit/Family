@@ -2,6 +2,7 @@ import java.io.Serializable;
 import java.time.YearMonth;
 
 public class Person implements Serializable {
+    private int id;
     private String name;
     private int age;
     private int birthday;
@@ -13,6 +14,10 @@ public class Person implements Serializable {
         this.age = YearMonth.now().getYear() - birthday;
     }
     // setter 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -41,5 +46,9 @@ public class Person implements Serializable {
 
     public boolean getIsMale() {
         return this.isMale;
-    }    
+    } 
+    
+    public int getId() {
+        return this.id;
+    }
 } 
