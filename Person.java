@@ -7,7 +7,11 @@ public class Person implements Serializable {
     private int age;
     private int birthday;
     private boolean isMale;
+    public Person() {
+        
+    }
     public Person(String name, int birthday, boolean isMale) {
+        super();
         this.name = name;
         this.birthday = birthday;
         this.isMale = isMale;
@@ -51,4 +55,6 @@ public class Person implements Serializable {
     public int getId() {
         return this.id;
     }
+
+
 } 
