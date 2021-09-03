@@ -16,8 +16,17 @@ public class Main {
                 case "2":
                     mn.remove();
                     break;
+                case "3":
+                    mn.edit();
+                    break;
                 case "4":
                     mn.show();
+                    break;
+                case "5":
+                    mn.SortByAge();
+                    break;
+                case "6":
+                    mn.SortByBirthday();
                     break;
                 case "7":
                     System.err.println("Exited!");

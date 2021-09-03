@@ -43,9 +43,35 @@ public class Manager {
 
     }
 
+    public void edit() {
+        int id = inputId();
+        for (int i=0;i<list.size();i++) 
+        if (list.get(i).getId() == id) {
+            list.get(i).setName(inputName());
+            list.get(i).setBirthday(inputBirthday());
+            list.get(i).setIsMale(inputSex());
+        }
+        sFile.write(list);
+    }
+
+    public void SortByAge() {
+        Collections.sort(list, new Comparator<Person>(){
+            @Override
+            public int compare(Person person1, Person person2) {
+                if (person1.getAge() > person2.getAge())
+                return 1;
+                return -1;
+            }
+        });
+    }
+
+    public void SortByBirthday() {
+        Collections.sort(list, new SortByDay());
+    }
+
     public void show() {
         for (Person person: list) {
-            System.out.println(person.getId() + "  " + person.getName() + "  " + person.getBirtday() + "  " + person.getAge());
+            System.out.printf("|%-5d|%-20s|%10d|%5d|%n", person.getId(), person.getName(), person.getBirtday(), person.getAge());
         }
     }
     public String inputName() {
